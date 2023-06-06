@@ -24,7 +24,6 @@ libraryDependencies ++= Seq(
   "io.estatico" %% "newtype" % "0.4.4",
   "com.github.pureconfig" %% "pureconfig" % "0.17.4",
   "org.http4s" %% "http4s-ember-server" % "0.23.19",
-  "dev.zio" %% "zio" % "1.0.0-RC18-2",
   "org.json4s" %% "json4s-jackson" % "3.7.0-M1"
 )
 
