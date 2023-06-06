@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass1234
+      PGDATA: /data/postgres
+      POSTGRES_DB: budget
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/data/postgres
+
+  budget:
+    image: docker/welcome-to-docker:latest
+    environment:
+      DB_URL: postgresdb
+      DB_USER: postgres
+      DB_PASS: pass1234
+      DB_NAME: budget
+    ports:
+      - "1234:1234"
+    depends_on:
+      - postgresdb
+volumes:
+  postgres:
